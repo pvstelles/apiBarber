@@ -19,7 +19,7 @@ class CreateScheduleBarbersTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('costumer_id');
             $table->unsignedBigInteger('service_id');
-            $table->timestamp('schedule_at')->default(null);
+            $table->timestamp('schedule_at')->nullable();
             $table->foreign('barber_id')->references('id')->on('barbers');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('costumer_id')->references('id')->on('costumers');
